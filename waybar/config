@@ -5,9 +5,9 @@
     "width": 1360, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     "margin-top": 3,
-    "margin-bottom": 1,
+    "margin-bottom": 0,
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "sway/mode", "sway/scratchpad", "custom/media"],
+    "modules-left": ["wlr/workspaces", "custom/media"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "clock", "tray"],
     // Modules configuration
