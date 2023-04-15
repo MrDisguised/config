@@ -18,5 +18,7 @@ if [ "$answer" = "yes" ]; then
   cfdisk /dev/sdb
 else
   curl https://raw.githubusercontent.com/MrDisguised/config/main/archinstall/archinstall_2.sh | bash
+  
+curl https://raw.githubusercontent.com/MrDisguised/config/main/archinstall/archinstall_2.sh | bash
 
   
