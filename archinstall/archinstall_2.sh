@@ -1,6 +1,6 @@
 #!/bin/bash
-read -p "Do you want btrfs ? If no then it will format the drive in ext4. Answer in (yes/no) . TYPE THE FULL WORD. DONT TYPE (y/n/Y/N)!!!!!" sex
-if [ "$sex" = "btrfs" ]; then
+read -p "Do you want btrfs ? If no then it will format the drive in ext4. Answer in (yes/no). Dont use caps (YES/NO). TYPE THE FULL WORD. DONT TYPE (y/n/Y/N)!!!!!" sex
+if [ "$sex" = "yes" ]; then
   mkfs.btrfs /dev/sda3
 else
   mkfs.ext4 /dev/sda3
