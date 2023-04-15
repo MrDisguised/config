@@ -1,4 +1,4 @@
-timedatectl
+#!/bin/bash
 timedatectl set-ntp true
 echo Now parition your drives sda and sdb
 sda1 - 512M - Will be mounted on /boot
