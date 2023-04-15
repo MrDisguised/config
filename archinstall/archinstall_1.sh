@@ -17,6 +17,6 @@ if [ "$answer" = "yes" ]; then
   sleep 3
   cfdisk /dev/sdb
 else
-  curl | sh
+  curl https://raw.githubusercontent.com/MrDisguised/config/main/archinstall/archinstall_2.sh | bash
 
   
