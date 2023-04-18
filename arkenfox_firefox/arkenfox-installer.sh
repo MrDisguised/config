@@ -9,8 +9,8 @@ cp -r * /home/rounak/.mozilla/firefox/*.default-release/
 curl https://raw.githubusercontent.com/MrDisguised/config/main/arkenfox_firefox/user-overrides.txt > /home/$(whoami)/.mozilla/firefox/*.default-release/user-overrides.js
 curl https://raw.githubusercontent.com/arkenfox/user.js/master/scratchpad-scripts/arkenfox-cleanup.js | wl-copy
 firefox about:config
-/home/$(whoami)/.mozilla/firefox/ytrjqjqq.default-release/updater.sh
-/home/$(whoami)/.mozilla/firefox/ytrjqjqq.default-release/prefsCleaner.sh
+/home/$(whoami)/.mozilla/firefox/*.default-release/updater.sh
+/home/$(whoami)/.mozilla/firefox/*.default-release/prefsCleaner.sh
 rm -rf ~/Desktop/user.js
 echo "All good :)"
 
