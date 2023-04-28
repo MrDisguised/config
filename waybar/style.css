@@ -1,6 +1,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    /*font-family: "Font Awesome 6","Caskaydia Cove Nerd Font Complete Mono", Roboto, Helvetica, Arial, sans-serif;*/
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
     border-radius: 10px;
 }
@@ -8,7 +9,7 @@
 window#waybar {
     /*background-color: rgba(43, 48, 59, 0.5);*/
     /*background-color: rgba(40, 38, 40, 0.8);*/
-    background-color: rgba(56,60,74,0.90);
+    background-color: rgba(56,60,74,0.98);
     /*border-bottom: 3px solid rgba(100, 114, 125, 0.5);*/
     color: #ffffff;
     transition-property: background-color;
@@ -58,14 +59,15 @@ button:hover {
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.4);
     /*border-radius: 10px;*/
 }
 
 #workspaces button.active {
     /*color: #00ffff;*/
-    color: #ffa812;
-    background: rgba(196, 196, 196, 0.3);
+    /*color: #ffa812;*/
+    color: #66ff00;
+    background: rgba(196, 196, 196, 0.2);
 }
 
 
@@ -187,8 +189,9 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+    /*background-color: #90b1b1;*/
+    background-color: #91a3b0;
+    color: #000000;
 }
 
 #wireplumber {
@@ -292,3 +295,14 @@ label:focus {
 #scratchpad.empty {
 	background-color: transparent;
 }
+
+#custom-weather {
+    /*background-color: #f1c40f;*/
+    background-color: #89cff0;
+    color: #000000;
+    padding: 10px 5px;
+    border-radius: 10px;
+
+}
+
+
