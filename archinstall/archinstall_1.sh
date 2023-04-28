@@ -1,7 +1,7 @@
 #!/bin/bash
 timedatectl set-ntp true
 lsblk
-echo "Now parition time to partition your drives"
+echo "Now time to partition your drives"
 echo "Look at lsblk and tell me your drive names"
 echo "What is your 1st drives 1st partition name ? Enter the full path name starting with /dev/xxxxxx"
 read driveone
