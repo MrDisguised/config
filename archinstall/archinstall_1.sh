@@ -30,6 +30,35 @@ case "$answer" in
     ;;
 esac
 
-curl https://raw.githubusercontent.com/MrDisguised/config/main/archinstall/archinstall_2.sh | bash
+read -p "Do you want btrfs ? If no then it will format the drive in ext4. Answer in (yes/no). Dont use caps (YES/NO). TYPE THE FULL WORD. DONT TYPE (y/n/Y/N)!!!!!" sex
+
+case "$sex" in
+  yes|y|Y|YES)
+    mkfs.btrfs /dev/sda3
+    ;;
+  no|n|N|NO)
+    mkfs.ext4 /dev/sda3
+    ;;
+  *)
+    echo "Invalid input. Please run the script again "
+    exit 1
+    ;;
+esac
+
+mkswap /dev/sda2
+mkfs.fat -F 32 /dev/sda1
+mount --mkdir /dev/sda3 /mnt
+mount --mkdir /dev/sda1 /mnt/boot
+swapon /dev/sda2
+pacman -Syyu reflector
+
+
+
+pacstrap -K /mnt base linux-zen linux-firmware networkmanager vim nvim git reflector grub efibootmgr intel-ucode btrfs-progs e2fsprogs dosfstools exfatprogs exfat-utils terminus-font
+genfstab -U /mnt >> /mnt/etc/fstab
+echo "Now run the archinstall_2.sh script to complete rest of your installation"
+echo "Goodbye :)"
+arch-chroot /mnt
+exit
 
   
