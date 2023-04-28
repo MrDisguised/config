@@ -68,6 +68,6 @@ genfstab -U /mnt >> /mnt/etc/fstab
 echo "Now run the archinstall_2.sh script to complete rest of your installation"
 echo "Goodbye :)"
 arch-chroot /mnt
-exit
+
 
   
