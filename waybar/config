@@ -4,10 +4,10 @@
     "height": 38, // Waybar height (to be removed for auto height)
     "width": 1360, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
-    "margin-top": 3,
-    "margin-bottom": 0,
+    "margin-top": 2,
+    "margin-bottom": 1,
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "custom/media"],
+    "modules-left": ["wlr/workspaces", "custom/media", "custom/weather"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "clock", "tray"],
     // Modules configuration
@@ -154,20 +154,22 @@
     },*/
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}  {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon}  {format_source}",
+        "format": "{volume}% {icon} {format_source}",
+        //"format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}%  {format_source}",
+        //"format-bluetooth-muted": " {icon}  {format_source}",
+	"format-bluetooth-muted": "{volume}%   {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "format-icons": {
-            "headphone": "",
+            "headphone": " ",
             "hands-free": "",
-            "headset": "",
+            "headset": "󰥰 ",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "", " "]
         },
         "on-click": "pavucontrol"
     },
@@ -182,6 +184,16 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }*/
+ //   }*/
+    "custom/weather": {
+    "exec": "/home/rounak/scripts/weather Kolkata",
+    "return-type": "json",
+    "format": "{}",
+    "tooltip": true,
+    "interval": 3600
+}
+
+
+
 }
 
