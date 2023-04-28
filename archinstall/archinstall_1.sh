@@ -1,21 +1,24 @@
 #!/bin/bash
 timedatectl set-ntp true
-echo "Now parition your drives sda and sdb"
-echo "sda1 - 512M - Will be mounted on /boot"
-echo "sda2 - 4G - Will be a [SWAP] partition"
-echo "sda3 - Rest - Will be mounted on /mnt"
+lsblk
+echo "Now parition time to partition your drives"
+echo "Look at lsblk and tell me your drive names"
+echo "What is your 1st drives 1st partition name ? Enter the full path name starting with /dev/xxxxxx"
+read driveone
+echo "What is your 1st drives 2nd partition name ? Enter the full path name starting with /dev/xxxxxx"
+read drivetwo
 sleep 7
 read -p "Do you want to partition your drives? Answer in (yes/no/y/Y/N/n) " answer
 
 case "$answer" in
   yes|y|Y|YES)
-    echo "First edit your sda drive"
+    
     echo "Opening cfdisk"
     sleep 3
-    cfdisk /dev/sda
-    echo "Now edit your sdb drive"
+    cfdisk $driveone
+    
     sleep 3
-    cfdisk /dev/sdb
+    cfdisk $drivetwo
     ;;
   no|n|N|NO)
     echo "Make up ur mind/ fix ur shit and then run this script"
