@@ -6,6 +6,7 @@ echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "en_IN UTF-8" >> /etc/locale.gen
 echo "LANG=en_IN.UTF-8" >> /etc/locale.conf
 echo "LC_TIME=en_IN.UTF-8" >> /etc/locale.conf
+echo "FONT=ter-224b" >> /etc/vconsole.conf
 echo "archissexy" >> /etc/hostname
 systemctl enable NetworkManager.service
 echo "Now it is time TO SET YOUR ROOT PASSWORD BE VERY CAREFULL AND REMEMBER THE PASSWORD." 
