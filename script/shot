@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Capture the selected region using Slurp and store it in a variable
+REGION=$(slurp)
+
+# Use the variable to crop the region and save it to a temporary file
+grim -g "$REGION" /tmp/screenshot.png
+
+# Copy the contents of the file to the clipboard using wl-copy
+wl-copy < /tmp/screenshot.png
+
+# Remove the temporary file
+rm /tmp/screenshot.png

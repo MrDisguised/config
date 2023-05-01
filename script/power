@@ -1,0 +1,6 @@
+#!/bin/sh
+swayidle -w \
+        timeout 2100 'hyprctl dispatch dpms off && swaylock -f -i /home/rounak/Pictures/mountains.jpg' \
+        before-sleep 'swaylock -f -i /home/rounak/Pictures/mountains.jpg' \
+	after-resume 'hyprctl dispatch dpms off'
+         
