@@ -1,0 +1,3 @@
+#!/bin/sh
+/home/rounak/scripts/wl-clip-persist/target/release/wl-clip-persist --clipboard both &
+
