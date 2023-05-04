@@ -1,8 +1,8 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 38, // Waybar height (to be removed for auto height)
-    "width": 1360, // Waybar width
+    "height": 41, // Waybar height (to be removed for auto height)
+    "width": 1361, // Waybar width
     "spacing": 4, // Gaps between modules (4px)
     "margin-top": 2,
     "margin-bottom": 1,
