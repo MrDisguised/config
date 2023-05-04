@@ -1,3 +1,8 @@
 #!/bin/sh
+
+killall -q hyprpaper
+hyprpaper &
 killall -q dunst 
 dunst --config ~/.config/dunst/dunstrc &
+killall -q waybar 
+waybar &
