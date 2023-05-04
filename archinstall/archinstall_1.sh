@@ -63,7 +63,7 @@ pacman -Syyu reflector
 
 
 
-pacstrap -K /mnt base linux-zen linux-firmware networkmanager vim neovim git reflector grub efibootmgr intel-ucode btrfs-progs e2fsprogs dosfstools exfatprogs exfat-utils terminus-font
+pacstrap -K /mnt base linux-zen linux-firmware networkmanager vim neovim git zip unzip p7zip wget reflector grub efibootmgr intel-ucode btrfs-progs e2fsprogs dosfstools exfatprogs exfat-utils terminus-font
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Now run the archinstall_2.sh script to complete rest of your installation"
 echo "Goodbye :)"
