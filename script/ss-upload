@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#grim -g "$(slurp)" - | imgur.sh >> /tmp/sample.txt
+#cat /tmp/sample.txt | cut -f2 -d "'" | wl-copy
+#rm -rf /tmp/sample.txt
+grim -g "$(slurp)" - | curl -F 'file=@-' 0x0.st >> /tmp/example.txt
+cat /tmp/example.txt | wl-copy
+rm /tmp/example.txt
+
