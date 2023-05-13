@@ -15,5 +15,5 @@ firefox about:config
 cd /home/$(whoami)/.mozilla/firefox/*.default-release/ && ./updater.sh
 cd /home/$(whoami)/.mozilla/firefox/*.default-release/ && ./prefsCleaner.sh
 rm -rf ~/Desktop/user.js
-echo "All good :)"
+echo " All good :) "
 
