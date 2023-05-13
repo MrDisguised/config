@@ -12,8 +12,8 @@ echo "NOW THIS BASH SCRIPT WILL OPEN FIREFOX. STUFF HAS BEEN ALREADY COPIED TO U
 echo "DO CTRL + SHIFT + K AND IT WILL OPEN THE CONSOLE. TYPE allow pasting TO ALLOW PASTING AND PASTE THE STUFF INSIDE WHICH HAS BEEN COPIED TO YOUR CLIPBOARD BY THIS BASH SCRIPT"
 sleep 8
 firefox about:config
-/home/$(whoami)/.mozilla/firefox/*.default-release/updater.sh
-/home/$(whoami)/.mozilla/firefox/*.default-release/prefsCleaner.sh
+cd /home/$(whoami)/.mozilla/firefox/*.default-release/ && ./updater.sh
+cd /home/$(whoami)/.mozilla/firefox/*.default-release/ && ./prefsCleaner.sh
 rm -rf ~/Desktop/user.js
 echo "All good :)"
 
