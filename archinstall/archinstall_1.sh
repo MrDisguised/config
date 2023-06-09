@@ -14,9 +14,10 @@ case "$answer" in
   yes|y|Y|YES)
     
     echo "Opening cfdisk"
+    echo "Now format your first drive"
     sleep 3
     cfdisk $d1
-    
+    echo "Now format your second drive"
     sleep 3
     cfdisk $d2
     ;;
@@ -30,16 +31,21 @@ case "$answer" in
     ;;
 esac
 
-echo "Okay now tell me the drive where you want to install EFI partition. Mention the full partition name starting with /dev/sdax etc etc"
+lsblk
+
+echo "Okay now tell me the drive partition number where you want to install EFI partition. Mention the full partition name starting with /dev/sdax etc etc"
 read d1p1
 
-echo "Okay now tell me the drive where you want to install swap partition. Mention the full partition name starting with /dev/sdax etc etc"
+echo "Okay now tell me the drive partition number where you want to install swap partition. Mention the full partition name starting with /dev/sdax etc etc"
 read d1p2
 
-echo "Okay now tell me the drive where you want to install your operating system. Mention the full partition name starting with /dev/sdax etc etc"
+echo "Okay now tell me the drive partition number where you want to install your operating system. Mention the full partition name starting with /dev/sdax etc etc"
 read d1p3
 
-read -p "Do you want btrfs ? If no then it will format the drive in ext4. Answer in (yes/no/y/Y/N/n/YES/NO)" sex
+echo "Okay now tell me the second drives (/dev/sdb) partition number where you want to install your operating system. Mention the full partition name starting with /dev/sdax etc etc"
+read d2p1
+
+read -p "Do you want to format your root partition in btrfs ? If no then it will format the drive in ext4. Answer in (yes/no/y/Y/N/n/YES/NO)" sex
 
 case "$sex" in
   yes|y|Y|YES)
@@ -54,15 +60,30 @@ case "$sex" in
     ;;
 esac
 
+read -p "Do you want to format your second drive (/dev/sdb) in btrfs ? If no then it will format the drive in ext4. Answer in (yes/no/y/Y/N/n/YES/NO)" bruh
+
+case "$bruh" in
+  yes|y|Y|YES)
+    mkfs.btrfs $d2p1
+    ;;
+  no|n|N|NO)
+    mkfs.ext4 $d2p1
+    ;;
+  *)
+    echo "Invalid input. Please run the script again "
+    exit 1
+    ;;
+esac
+
+mkdir /media && mount --mkdir $d2p1 /media/data
 mkswap $d1p2
 mkfs.fat -F 32 $d1p1
 mount --mkdir $d1p3 /mnt
 mount --mkdir $d1p1 /mnt/boot
 swapon $d1p2
 pacman -Syyu reflector
-
-
-
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+reflector --country India --sort score --latest 20 --fastest 20 --save /etc/pacman.d/mirrorlist
 pacstrap -K /mnt base linux-zen linux-firmware networkmanager vim neovim git zip unzip p7zip wget reflector grub efibootmgr intel-ucode btrfs-progs e2fsprogs dosfstools exfatprogs exfat-utils terminus-font
 genfstab -U /mnt >> /mnt/etc/fstab
 echo "Now run the archinstall_2.sh script to complete rest of your installation"
