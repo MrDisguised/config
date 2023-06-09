@@ -8,7 +8,7 @@ read d1
 echo "What is your 2nd drives name? Mention the full name starting with /dev"
 read d2
 sleep 7
-read -p "Do you want to partition your drives? Answer in (yes/no/y/Y/N/n) " answer
+read -p "Do you want to partition your drives? Answer in (yes/no/y/Y/N/n/YES/NO) " answer
 
 case "$answer" in
   yes|y|Y|YES)
@@ -39,7 +39,7 @@ read d1p2
 echo "Okay now tell me the drive where you want to install your operating system. Mention the full partition name starting with /dev/sdax etc etc"
 read d1p3
 
-read -p "Do you want btrfs ? If no then it will format the drive in ext4. Answer in (yes/no). Dont use caps (YES/NO). TYPE THE FULL WORD. DONT TYPE (y/n/Y/N)!!!!!" sex
+read -p "Do you want btrfs ? If no then it will format the drive in ext4. Answer in (yes/no/y/Y/N/n/YES/NO)" sex
 
 case "$sex" in
   yes|y|Y|YES)
