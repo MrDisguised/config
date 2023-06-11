@@ -1,9 +1,15 @@
 #!/bin/sh
 
-#grim -g "$(slurp)" - | imgur.sh >> /tmp/sample.txt
-#cat /tmp/sample.txt | cut -f2 -d "'" | wl-copy
-#rm -rf /tmp/sample.txt
-grim -g "$(slurp)" - | curl -F 'file=@-' 0x0.st >> /tmp/example.txt
-cat /tmp/example.txt | wl-copy
-rm /tmp/example.txt
+# Capture the selected region using Slurp and store it in a variable
+REGION=$(slurp)
 
+# Use the variable to crop the region and save it to a temporary file
+grim -g "$REGION" /tmp/screenshot.png
+
+# Copy the contents of the file to the clipboard using wl-copy
+imgur.sh /tmp/screenshot.png > /tmp/cat.txt
+
+cat /tmp/cat.txt | wl-copy
+# Remove the temporary file
+rm /tmp/screenshot.png
+rm /tmp/cat.txt

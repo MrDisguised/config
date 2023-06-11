@@ -1,2 +1,4 @@
 #!/bin/sh
-cd /home/rounak/scripts/powertunnel && java -Dfile.encoding=UTF-8 -jar PowerTunnel.jar -console 
+#cd /home/rounak/scripts/powertunnel && java -Dfile.encoding=UTF-8 -jar PowerTunnel.jar -console
+#mullvad disconnect
+#mullvad connect 

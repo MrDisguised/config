@@ -1,0 +1,3 @@
+#!/bin/sh
+ver=$(hyprctl version | grep "Tag" | awk '{print $2}')
+cd /home/rounak/.config/hypr/plugin/hyprland-plugins/Hyprland && git checkout tags\/$ver && sudo make pluginenv
