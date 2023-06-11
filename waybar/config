@@ -1,13 +1,14 @@
 {
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
-    "height": 41, // Waybar height (to be removed for auto height)
+    "height": 36, // Waybar height (to be removed for auto height)
     "width": 1361, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 3, // Gaps between modules (4px)
     "margin-top": 2,
-    "margin-bottom": 1,
+    "margin-bottom": 0,
     // Choose the order of the modules
-    "modules-left": ["wlr/workspaces", "custom/media", "custom/weather"],
+    //"modules-left": ["wlr/workspaces", "custom/media", "custom/weather"],
+    "modules-left": ["wlr/workspaces", "custom/media"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["pulseaudio", "clock", "tray"],
     // Modules configuration
@@ -42,7 +43,7 @@
      },
 
     "hyprland/window": {
-        "format": "{}"
+        "format": "󰁕 {}"
     },
 
 /*        "keyboard-state": {
@@ -159,7 +160,7 @@
         "format-bluetooth": "{volume}%  {format_source}",
         //"format-bluetooth-muted": " {icon}  {format_source}",
 	"format-bluetooth-muted": "{volume}%   {format_source}",
-        "format-muted": " {format_source}",
+        "format-muted": "{volume}%   {format_source}",
         "format-source": "{volume}% ",
         "format-source-muted": " ",
         "format-icons": {
